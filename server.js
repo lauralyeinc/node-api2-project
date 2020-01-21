@@ -1,10 +1,10 @@
 const express = require('express');
-const postsServer = require("./posts/postsServer");  //this part okay. 
+const postsRouter = require("./posts/postsRouter");  //this part okay. 
 
 const server = express();
 
 server.use(express.json());
-server.use('/api/posts', postsServer);  // crashes adding it to server/index flow. (error #1)
+server.use('/api/posts', postsRouter);  // crashes adding it to server/index flow. (error #1)  
 
 server.get('/', (req, res) => {
     res.send(`
