@@ -1,8 +1,10 @@
 const express = require('express');
 const postsRouter = require("./posts/postsRouter");  //this part okay. 
-const express = require('helmet');
+const helmet = require('helmet');
+
 const server = express();
 
+server.use(helmet()); 
 server.use(express.json());
 server.use('/api/posts', postsRouter);  // crashes adding it to server/index flow. (error #1)  
 
